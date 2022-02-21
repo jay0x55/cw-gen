@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+<head>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+<style>
+.card {
+  box-shadow: 10px 11px 12px #460c0c;
+  border-radius: 10px;
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: rgb(0, 241, 149);
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 0 0 10px 10px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+    
+
+    <h2 style="text-align:center">Wallet</h2>
+<br><br>
+<div class="card">
+  <img src="{% static 'images/doge.png' %}" alt="doge">
+  <h1>DOGE</h1>
+  <p class="title">Get your Dogecoin wallet</p>
+  <p>wallet info</p>
+</div>
+<i>private key: {{ doge.private_key }}</i><br>
+<i>public key: {{ doge.public_key }}</i><br>
+<i>wif: {{ doge.wif }}</i><br>
+<i>main address: {{ doge.address }}</i><br>
+<i>sub address: {{ doge.sub_address }}</i><br>
+
+<br><br>
+
+<div class="card">
+    <img src="{% static 'images/xmr.png' %}" alt="xmr">
+    <h1>XMR</h1>
+    <p class="title">Get your Monero wallet</p>
+    <p>wallet info</p>
+  </div>
+  <i>private spend: {{ xmr.prv_spend }}</i><br>
+  <i>private view: {{ xmr.prv_view }}</i><br>
+  <i>public spend: {{ xmr.pub_spend }}</i><br>
+  <i>public view: {{ xmr.pub_view }}</i><br>
+  <i>main address: {{ xmr.main_addr }}</i>
+  <i>sub address: {{ xmr.sub_addr }}</i><br>
+  
+
+</body>
+</html>
